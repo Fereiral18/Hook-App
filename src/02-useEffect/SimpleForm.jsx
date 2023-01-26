@@ -1,35 +1,34 @@
 import { useEffect, useState } from "react";
+import { Message } from "./Message";
 
 export const SimpleForm = () => {
   const [formState, setformState] = useState({
-    username: 'Xiragon',
-    email: 'luis@spartandevs.com'
-  })
-  
-  const {username, email} = formState
+    username: "Luis fereira",
+    email: "luis@spartandevs.com",
+  });
 
-  const onInputChange = ({target}) =>{
-    const { name, value } = target   
+  const { username, email } = formState;
+
+  const onInputChange = ({ target }) => {
+    const { name, value } = target;
     setformState({
-        ...formState,
-        [name] : value,
-    })
-    
-  }
+      ...formState,
+      [name]: value,
+    });
+  };
 
-  useEffect( ( ) => {
-    console.log('useEffect called')
-  }, [])
+  useEffect(() => {
+    // console.log("useEffect called");
+  }, []);
 
-  useEffect( ( ) => {
-    console.log('Change form State')
-  }, [formState])
+  useEffect(() => {
+    // console.log("Change form State");
+  }, [formState]);
 
-  useEffect( ( ) => {
-    console.log('useEffect called')
-  }, [email])
-   
-  
+  useEffect(() => {
+    // console.log("useEffect called");
+  }, [email]);
+
   return (
     <>
       <h1>Formulario Simple</h1>
@@ -40,8 +39,8 @@ export const SimpleForm = () => {
         className="form-control"
         placeholder="username"
         name="username"
-        value={ username }
-        onChange={ onInputChange }
+        value={username}
+        onChange={onInputChange}
       />
 
       <input
@@ -49,9 +48,13 @@ export const SimpleForm = () => {
         className="form-control mt-1"
         placeholder="luis@spartandevs.com"
         name="email"
-        value={ email }
+        value={email}
         onChange={onInputChange}
       />
+
+      {
+        (username === 'Luis fereira') && <Message/>
+      }
     </>
   );
 };
