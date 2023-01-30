@@ -19,10 +19,10 @@ export const MultipleCustomHooks = () => {
 
       {isLoading ? <LoadingQuoter /> : <Quote author={ author } quote = {quote} />}
 
-      <button onClick={() => increment()} className="btn btn-primary">
+      <button onClick={() => increment()} className="btn btn-primary mt-1">
         Next quote
       </button>
-      <button onClick={() => decrement()} className="btn btn-primary mt-2">
+      <button onClick={() => decrement()} className="btn btn-primary mt-1">
         Back quote
       </button>
     </>
